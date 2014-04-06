@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+    Register Page | AngularJS, Django E-Commerce App
+{% endblock title %}
+
+{% block content %}
+    <div>
+        {% if message %}
+            Django Message: {{ message }}
+        {% endif %}
+
+        <form name="createUserForm" class="form-signin" novalidate method="post" action="/create_user">
+            {% csrf_token %}
+            <h2 class="form-signin-heading">Please sign up</h2>
+            <input type="text" name="first_name" class="form-control" placeholder="First Name" required autofocus />
+            <input type="text" name="last_name" class="form-control" placeholder="Last Name" required />
+            <input type="text" name="email" class="form-control" placeholder="Email address" required />
+            <input type="text" name="username" class="form-control" placeholder="Username" required />
+            <input type="password" name="password" class="form-control" placeholder="Password" required />
+            <button class="btn btn-lg btn-primary btn-block form-signin-btn" type="submit">Register</button>
+        </form>
+    </div>
+{% endblock content %}

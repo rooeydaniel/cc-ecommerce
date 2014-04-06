@@ -20,6 +20,5 @@ urlpatterns = patterns('',
     # Static files, served from server
     url(r'^static/(\?P.*)$', 'django.views.static.serve', {'document_root': base.STATIC_ROOT}),
 
-    # url(r'^', include('apps.public.urls')),
-    url(r'^$', TemplateView.as_view(template_name='base.html')),
+    url(r'^', include('apps.public.urls')),
 )

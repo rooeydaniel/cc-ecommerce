@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+    Login Page | AngularJS, Django E-Commerce App
+{% endblock title %}
+
+{% block login_link %}
+    <li class="active"><a href="/login">Login</a></li>
+{% endblock login_link %}
+
+{% block content %}
+    <div>
+        {% if message %}
+            Django Message: {{ message }}
+        {% endif %}
+
+        <form name="loginForm" class="form-signin" novalidate method="post" action="/login">
+            {% csrf_token %}
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <input type="text" name="username" class="form-control" placeholder="Email address" required autofocus>
+            <input type="password" name="password" class="form-control" placeholder="Password" required>
+
+            Not Registered? <a href="create_user">Sign up now</a>
+            <div class="spacersmall"></div>
+
+            <button class="btn btn-lg btn-primary btn-block form-signin-btn" type="submit">Sign in</button>
+        </form>
+    </div>
+{% endblock content %}
