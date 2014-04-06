@@ -89,6 +89,69 @@ $ npm install
 $ python manage.py syncdb  # Create a super user
 ```
 
+5. Start up the Django internal server in your project directory
+
+```
+$ python manage.py runserver --settings=project.settings.dev
+```
+
+6. Open up your browser to http://localhost:8000 and you should see a generic home page
+
+Branch v2
+---------
+This branch will introduce User Authentication through Django, along with User Account Creation.
+Here are the new additions:
+
+1. We modified base.html and added some Django template blocks.  The main components were the login link, logout link,
+and My Account links.
+
+2. We modified the main urls.py file to include a new urls.py from our public app.
+
+3. We added a new urls.py file to our public app to handle the new home and login links.
+
+4. We added a new views.py file to our public app to handle the new home and login views.
+
+5. We created a new templates folder with login.html and home.html files in our public app.
+
+6. We added some custom styles to app.css to help with the login form and follows the starter template from Bootstrap.
+
+7. We modified the login view to handle both the rendering of the login page and the authentication of a user.  Once
+authenticated, you should see your Full Name with a link for logout and My Account.
+
+8. We added the create_user view to handle the new user form and posting of new user information.
+
+9. We added the edit_user view to handle my account details and posting of new user information.
+
+### Steps to run this branch locally
+1. Activate your virtual environment and checkout the v2 branch
+
+```
+$ cd ~/path/to/project
+$ . ~/.virtualenvs/angular_django_ecommerce/bin/activate
+$ git checkout v2
+```
+
+2. Install required PIP packages in your project directory
+
+```
+$ pip install -r project/requirements/dev.txt  # Please read note below if you use OS X Mavericks
+```
+
+* Note: As of March 27, 2014, the command above will fail on OS X Mavericks, following is the command you want to run:
+* http://stackoverflow.com/questions/22313407/clang-error-unknown-argument-mno-fused-madd-python-package-installation-fa
+
+* Note: To uninstall all PIP packages - pip freeze | xargs pip uninstall -y
+
+```
+ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip install -r project/requirements/dev.txt
+```
+
+3. Install NPM and Bower packages  in your project directory
+
+```
+$ npm install
+```
+
 4. Start up the Django internal server in your project directory
 
 ```
@@ -96,7 +159,6 @@ $ python manage.py runserver --settings=project.settings.dev
 ```
 
 5. Open up your browser to http://localhost:8000 and you should see a generic home page
-
 
 Deploying to Heroku (WIP - does NOT work yet)
 ---------------------------------------------
