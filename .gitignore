@@ -52,3 +52,7 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+# Added
+node_modules
+.idea
+apps/common/assets/lib
