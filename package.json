@@ -1,0 +1,21 @@
+{
+    "name": "angular-django-ecommerce-seed",
+    "description": "A starter project for Angular and Django",
+    "repository": "https://github.com/rooeydaniel/angular-django-ecommerce.git",
+    "engines": {
+        "node": "~0.10.23"
+    },
+    "dependencies": {
+        "bower": "~1.3.1"
+    },
+    "devDependencies": {
+        "phantomjs": "~1.9",
+        "karma": "~0.10",
+        "karma-junit-reporter": "~0.1",
+        "karma-jasmine": "~0.1",
+        "karma-ng-scenario": "~0.1"
+    },
+    "scripts": {
+        "postinstall": "./node_modules/bower/bin/bower install"
+    }
+}

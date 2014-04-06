@@ -1,0 +1,70 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link href="{% static 'lib/bootstrap/dist/css/bootstrap.css' %}" rel="stylesheet">
+
+        <title>AngularJS, Django E-Commerce App</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li><a href="/">Home</a></li>
+                </ul>
+                <h3 class="text-muted">AngularJS, Django E-Commerce App</h3>
+            </div>
+            <div>
+                <div class="jumbotron">
+                    <h1>Home Page</h1>
+                </div>
+
+                <div>
+                    Congratulations!  You successfully deployed your application to
+                    {% if 'localhost' in request.get_host %}
+                        your local environment
+                    {% else %}
+                        a remote server
+                    {% endif %}
+                </div>
+            </div>
+
+            <hr/>
+
+            <div>
+                <pre>
+                    Shows a pre-formatted block
+                </pre>
+            </div>
+
+            <div>
+                <pre>
+                    Another pre-formatted block
+                </pre>
+            </div>
+
+            <hr/>
+
+            <footer>
+                <div class="container">
+                    <p class="text-muted credit">
+                        Copyright &copy; Coding Campus 2014 &middot; AngularJS, Django E-Commerce App
+                    </p>
+                </div>
+            </footer>
+        </div>
+        <!-- /.container -->
+
+        <!-- javascript -->
+        <script src="{% static 'lib/jquery/dist/jquery.js' %}"></script>
+        <script src="{% static 'lib/bootstrap/dist/js/bootstrap.js' %}"></script>
+    </body>
+</html>
